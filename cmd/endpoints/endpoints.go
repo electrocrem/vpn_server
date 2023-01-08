@@ -18,7 +18,7 @@ func Page(path string) http.Handler {
 func GetProfile(w http.ResponseWriter, r *http.Request) {
 	randomName := "profile" + strconv.Itoa(rand.Intn(1000000))
 	fmt.Printf("%v", randomName)
-	oss.LaunchScript("/bin/sh", "./generate_profile.sh", randomName)
+	oss.LaunchScript("./generate_profile.sh", randomName)
 	filePath := "profiles/" + randomName + ".ovpn"
 	fmt.Printf("\n%v\n", filePath)
 	DonwnloadProfile(w, r, filePath)
