@@ -19,7 +19,10 @@ func GetProfile(w http.ResponseWriter, r *http.Request) {
 	randomName := strconv.Itoa(rand.Intn(1000))
 	fmt.Printf("%v", randomName)
 	oss.LaunchScript("/bin/sh", "./generate_profile.sh", randomName)
-	DonwnloadProfile(w, r, "profiles/"+randomName)
+	filePath := "profiles/" + randomName + ".ovpn"
+	fmt.Printf("\n%v\n", filePath)
+	DonwnloadProfile(w, r, filePath)
+	os.Remove(filePath)
 
 }
 

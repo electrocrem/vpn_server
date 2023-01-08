@@ -2,6 +2,7 @@ package oss
 
 import (
 	"fmt"
+	"log"
 	"os/exec"
 )
 
@@ -11,6 +12,8 @@ func LaunchScript(cmdName string, pathToScript string, arg string) string {
 		fmt.Printf("error %s", err)
 	}
 	cmdOutput := string(cmd)
+
+	log.Printf("%v\n", cmdOutput)
 	return cmdOutput
 
 }
