@@ -23,7 +23,7 @@ name=$1
 			# Generates the custom client.ovpn
 			new_client
 			echo
-			echo "$client added. Configuration available in:" profiles/"$client.ovpn"
+			echo "$client added. Configuration available in:"profiles/"$client.ovpn"
 			exit
 		;;
 
